@@ -24,4 +24,17 @@ export default function Nextra({ Component, pageProps }) {
       <Component {...pageProps} />
     </>
   )
+
+import { Analytics } from '@vercel/analytics/react';
+ 
+function MyApp({ Component, pageProps }) {
+  return (
+    <>
+      <Component {...pageProps} />
+      <Analytics />
+    </>
+  );
+}
+ 
+export default MyApp;
 }
