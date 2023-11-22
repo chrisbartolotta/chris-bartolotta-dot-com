@@ -3,6 +3,18 @@ import Head from 'next/head'
 
 import '../styles/main.css'
 
+import { Analytics } from '@vercel/analytics/react';
+ 
+function MyApp({ Component, pageProps }) {
+  return (
+    <>
+      <Component {...pageProps} />
+      <Analytics />
+    </>
+  );
+}
+ 
+export default MyApp;
 export default function Nextra({ Component, pageProps }) {
   return (
     <>
@@ -24,17 +36,4 @@ export default function Nextra({ Component, pageProps }) {
       <Component {...pageProps} />
     </>
   )
-
-import { Analytics } from '@vercel/analytics/react';
- 
-function MyApp({ Component, pageProps }) {
-  return (
-    <>
-      <Component {...pageProps} />
-      <Analytics />
-    </>
-  );
-}
- 
-export default MyApp;
 }
